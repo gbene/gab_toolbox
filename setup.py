@@ -13,14 +13,14 @@ setup(
       
       name = 'gab_toolbox',
       packages = ['gab_toolbox'],
-      version = '0.1' ,
+      version = '0.2' ,
       license = 'MIT',
       description = 'Functions that I recurrenlty use in other scripts.',
       author = 'Gabriele Benedetti',
       author_email = 'gabri.benedetti@gmail.com',
       url = 'https://github.com/gbene',
-      download_url = 'https://github.com//gbene/gab_toolbox/archive/v0.1.tar.gz' ,
-      keywords = ['formatting','files','opening','writing','conversions'],
+      download_url = 'https://github.com//gbene/gab_toolbox/archive/v0.2.tar.gz' ,
+      keywords = ['formatting','files','opening','writing','conversions','latex','bibtex'],
       install_requires = [''],
       classifiers=[
           'Topic :: Utilities',
