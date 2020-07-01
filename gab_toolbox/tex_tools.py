@@ -27,6 +27,10 @@ arguments are used to find and isolate the value of the key. For e.g. the
 is delimited by { }: '\tyear={2005}'
  
 """
+
+from gab_toolbox import format_tools
+
+
 def bib_entries(bib_array,crit):
     
         list_crit = {
@@ -65,13 +69,19 @@ def sort_bib(bib_array,order=0,form=0,crit=''):
     return new_bibarr_text,key_bibarr_sort
 
 
-def filter_bib(bib_array,key_word,form=0,crit=''):
+def filter_bib(bib_array,key_word,limit=0,form=0,crit=''):
     
-    key_word = key_word.lower()
-    bib_array = bib_entries(bib_array,crit) if form else bib_array
+    bib_filtered = []
+    bib_array = bib_entries(bib_array,crit) if form else bib_array #use function bib_entries 
+    values = [[index,string[0].split(' ')] for index,string in enumerate(bib_array)] # take key index and value
     
-    key_bibarr_filt = [i for i in bib_array if key_word in i[0]]
-    new_bibarr_text =  [n for i in bib_array for n in i[1] if key_word in i[0]]
+    for i in values:
+        bib_match = format_tools.word_match(key_word,i[1],limit)[0] #match the key word with the possible combinations
+        if bib_match: #if there are any matches it appends it 
+            bib_filtered.append(bib_array[i[0]])
+            
+    key_bibarr_filt = [i for i in bib_filtered]
+    new_bibarr_text = [n for i in bib_filtered for n in i[1]]
     return new_bibarr_text,key_bibarr_filt
 
 
