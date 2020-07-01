@@ -7,11 +7,10 @@ Created on Thu Mar 26 22:06:43 2020
 
 
 def valid_title(title,char='_'):
-    new_title = title.copy()
     banned_chars = ["/","*","<",">",":","?","|",'"','\\']
     
     for j in banned_chars:
-        new_title = new_title.replace(j,char)
+        new_title = title.replace(j,char)
     
     return new_title
 
@@ -68,3 +67,43 @@ def arr2dic(array, sort=0,rev=0,overwrite=0):
            dic = loop(array)
 		   
     return dic
+
+
+
+
+def word_match(word,array,limit=0):
+    
+    #prep
+    word.lower()
+    word_len = len(word)
+    words = [valid_title(string,'').lower() for string in array]#filter out all the non valid symbols and lower everything
+    new_words=[]
+    
+    for i in words: #words that need to be compared: the ones short of one letter than the input word,the ones longer than the input word and the ones with the same length
+        if len(word[:-1])==len(i):
+            new_words.append(i+'%')
+        elif len(word)<len(i):
+            new_words.append(i[:word_len])
+        elif len(word) == len(i):
+            new_words.append(i)      
+    
+    #scoring
+    final_score=0
+    words_match = []
+    index_match = []
+    
+    #every word is compared letter by letter with the input word and if the letters match it adds 1 to the score. the final score is the total score divided by the input word length
+    for b,i in enumerate(new_words):
+        score = 0        
+        for c,n in enumerate(word):
+            if n == i[c]:
+                score +=1
+            else:
+                score +=0
+                
+        final_score = score/word_len
+        if final_score>limit:
+            words_match.append(i)
+            index_match.append(b)
+    
+    return words_match,index_match
