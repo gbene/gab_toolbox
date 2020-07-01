@@ -108,11 +108,12 @@ The function returns as the first argument the sorted bib entries ready to be sa
 
 ### filter_bib:
 ```python
-order_bib(bib_array,key_word,[form],[crit])
+order_bib(bib_array,key_word,[limit],[form],[crit])
 ```
 Function used to filter the array based on the key argument. 
 + The first argument accepts any array that is formatted as the ouput of bib_entries ([key,[entry]]) or the imported bib file as list. if you want to use directly the order bib you must set the **[form]** argument to 1 and specify the criterion.
 + The second argument is used to filter the entries. It compares the user input to the key argument of the bib_array.
++ The **[limit]** argument is a value between 0 and 1 and defines the word_matching "strength"; Higher limits will result in a more strict filtering (very similar words) 
 
 The function returns all the corresponding entries ordered by appearance as bib entries ready to be saved and the corresponding sorted array with [key,[entry]] format.
 
