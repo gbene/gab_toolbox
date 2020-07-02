@@ -67,6 +67,20 @@ arr2dic(array,[sort],[rev],[overwrite])
 + The **[overwrite]** argument gives the possibility to merge multiple *values* under the same *key*; for **overwrite=0** [default] the values will be merged while for **overwrite=1** it will only save the last *value* corresponding to the *key*.
 
 
+### word_match
+Function used to match a template word with a list of sample words.
+
+```python
+word_match(word,words,[limit])
+```
+
++ The first argument is the template word.
++ The second argument is the list of sample words.
++ The **[limit]** argument is an optional value between 0 and 1 (default is set to 0.5) and it defines the "strictness" of the matching. Higher values will output very similar matches to the template word.
+
+The function ouputs the sample words matched and the corresponding index in the list.
+
+
 ## tex_tools
 
 Functions that can be used for latex.
@@ -113,7 +127,7 @@ order_bib(bib_array,key_word,[limit],[form],[crit])
 Function used to filter the array based on the key argument. 
 + The first argument accepts any array that is formatted as the ouput of bib_entries ([key,[entry]]) or the imported bib file as list. if you want to use directly the order bib you must set the **[form]** argument to 1 and specify the criterion.
 + The second argument is used to filter the entries. It compares the user input to the key argument of the bib_array.
-+ The **[limit]** argument is a value between 0 and 1 and defines the word_matching "strength"; Higher limits will result in a more strict filtering (very similar words) 
++ The **[limit]** argument is an optional value between 0 and 1 (default is set to 0.5) and it defines the word_matching "strength"; Higher limits will result in a more strict filtering (very similar words) 
 
 The function returns all the corresponding entries ordered by appearance as bib entries ready to be saved and the corresponding sorted array with [key,[entry]] format.
 
