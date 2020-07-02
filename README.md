@@ -90,6 +90,7 @@ Functions that can be used for latex. To import use:
 To use the specific function:
  ``` python
  tex_tools.bib_entries(arguments)
+```
 
 ### bib_entries:
 This function is used to separate and classify bib files, imported as list.
