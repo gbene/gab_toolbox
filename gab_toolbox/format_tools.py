@@ -109,5 +109,4 @@ def word_match(word,words,limit=0.5):
             words_match.append(words[b])
             index_match.append(b)
             score_match.append(final_score)
-    print(score_match)
     return words_match,index_match,score_match
