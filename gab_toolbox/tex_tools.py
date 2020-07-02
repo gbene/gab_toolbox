@@ -69,7 +69,7 @@ def sort_bib(bib_array,order=0,form=0,crit=''):
     return new_bibarr_text,key_bibarr_sort
 
 
-def filter_bib(bib_array,key_word,limit=0,form=0,crit=''):
+def filter_bib(bib_array,key_word,limit=0.5,form=0,crit=''):
     
     bib_filtered = []
     bib_array = bib_entries(bib_array,crit) if form else bib_array #use function bib_entries 
