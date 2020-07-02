@@ -78,7 +78,7 @@ word_match(word,words,[limit])
 + The second argument is the list of sample words.
 + The **[limit]** argument is an optional value between 0 and 1 (default is set to 0.5) and it defines the "strictness" of the matching. Higher values will output very similar matches to the template word.
 
-The function ouputs the sample words matched and the corresponding index in the list.
+The function returns the sample words matched, the corresponding index in the list and the score.
 
 
 ## tex_tools
