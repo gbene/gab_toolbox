@@ -7,12 +7,13 @@ Created on Thu Mar 26 22:06:43 2020
 
 
 def valid_title(title,char='_'):
+    new_title = title
     banned_chars = ["/","*","<",">",":","?","|",'"','\\']
     
     for j in banned_chars:
-        new_title = title.replace(j,char)
-    
+        new_title = new_title.replace(j,char) 
     return new_title
+
 
 def import_file(file):
     with open(file,'r') as f:
@@ -71,15 +72,15 @@ def arr2dic(array, sort=0,rev=0,overwrite=0):
 
 
 
-def word_match(word,array,limit=0):
+def word_match(word,words,limit=0.5):
     
     #prep
     word.lower()
     word_len = len(word)
-    words = [valid_title(string,'').lower() for string in array]#filter out all the non valid symbols and lower everything
+    words_array = [valid_title(string,'').lower() for string in words]#filter out all the non valid symbols and lower everything
     new_words=[]
     
-    for i in words: #words that need to be compared: the ones short of one letter than the input word,the ones longer than the input word and the ones with the same length
+    for i in words_array: #words that need to be compared: the ones short of one letter than the input word,the ones longer than the input word and the ones with the same length
         if len(word[:-1])==len(i):
             new_words.append(i+'%')
         elif len(word)<len(i):
@@ -103,7 +104,7 @@ def word_match(word,array,limit=0):
                 
         final_score = score/word_len
         if final_score>limit:
-            words_match.append(i)
+            words_match.append(words[b])
             index_match.append(b)
     
     return words_match,index_match
