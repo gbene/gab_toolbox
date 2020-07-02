@@ -108,9 +108,9 @@ The first argument finds the symbol or string that identifies the line that cont
 The fourth argument is a descriptor and it is optional.
 The function returns a 2D array with the choosen criterion as string and the corresponding entry as list.
 
-### order_bib:
+### sort_bib:
 ```python
-order_bib(bib_array,[order],[form],[crit])
+sort_bib(bib_array,[order],[form],[crit])
 ```
 Function used to sort the array. 
 + The first argument accept any array that is formatted as the ouput of bib_entries ([key,[entry]]) or the imported bib file as list. if you want to use directly the order bib you must set the **[form]** argument to 1 and specify the criterion.
