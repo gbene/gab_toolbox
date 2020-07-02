@@ -83,7 +83,13 @@ The function returns the sample words matched, the corresponding index in the li
 
 ## tex_tools
 
-Functions that can be used for latex.
+Functions that can be used for latex. To import use:  
+ ``` python
+ from gab_toolbox import tex_tools
+ ```
+To use the specific function:
+ ``` python
+ tex_tools.bib_entries(arguments)
 
 ### bib_entries:
 This function is used to separate and classify bib files, imported as list.
