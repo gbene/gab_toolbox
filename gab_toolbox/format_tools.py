@@ -74,8 +74,9 @@ def arr2dic(array, sort=0,rev=0,overwrite=0):
 
 def word_match(word,words,limit=0.5):
     
+
     #prep
-    word.lower()
+    word=word.lower()
     word_len = len(word)
     words_array = [valid_title(string,'').lower() for string in words]#filter out all the non valid symbols and lower everything
     new_words=[]
@@ -92,6 +93,7 @@ def word_match(word,words,limit=0.5):
     final_score=0
     words_match = []
     index_match = []
+    score_match = []
     
     #every word is compared letter by letter with the input word and if the letters match it adds 1 to the score. the final score is the total score divided by the input word length
     for b,i in enumerate(new_words):
@@ -103,8 +105,9 @@ def word_match(word,words,limit=0.5):
                 score +=0
                 
         final_score = score/word_len
-        if final_score>limit:
+        if final_score>=limit:
             words_match.append(words[b])
             index_match.append(b)
-    
-    return words_match,index_match
+            score_match.append(final_score)
+    print(score_match)
+    return words_match,index_match,score_match
