@@ -8,7 +8,7 @@ Created on Fri Apr  3 22:52:36 2020
 from distutils.core import setup
 from os import path
 read_dir = path.abspath(path.dirname(__file__))
-with open (path.join(read_dir,'README.md'),encoding='utf-8') as f:
+with open(path.join(read_dir,'README.md'),encoding='utf-8') as f:
       read_file = f.read()
 
 setup(
