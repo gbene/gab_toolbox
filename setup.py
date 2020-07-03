@@ -6,20 +6,23 @@ Created on Fri Apr  3 22:52:36 2020
 """
 
 from distutils.core import setup
-
+from os import path
+read_dir = path.abspath(path.dirname(__file__))
+with open (path.join(read_dir,'README.md'),encoding='utf-8') as f:
+      read_file = f.read()
 
 setup(
       
       
       name = 'gab_toolbox',
       packages = ['gab_toolbox'],
-      version = '0.2.2' ,
+      version = '0.2.3' ,
       license = 'MIT',
       description = 'Functions that I recurrenlty use in other scripts.',
       author = 'Gabriele Benedetti',
       author_email = 'gabri.benedetti@gmail.com',
       url = 'https://github.com/gbene',
-      download_url = 'https://github.com//gbene/gab_toolbox/archive/v0.2.2.tar.gz' ,
+      download_url = 'https://github.com//gbene/gab_toolbox/archive/v0.2.3.tar.gz' ,
       keywords = ['formatting','files','opening','writing','conversions','latex','bibtex'],
       install_requires = [''],
       classifiers=[
@@ -29,5 +32,7 @@ setup(
           'Intended Audience :: Developers',
           'License :: OSI Approved :: MIT License',
           ],
+      long_description = read_file,
+      long_description_content_type='text/markdown',
 )
    
