@@ -1,15 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Apr  3 22:52:36 2020
-
-@author: gabri
-"""
-
 from distutils.core import setup
-from os import path
-read_dir = path.abspath(path.dirname(__file__))
-with open(path.join(read_dir,'README.md'),encoding='utf-8') as f:
-      read_file = f.read()
+with open('README.md') as f:
+    long_description = f.read()
 
 setup(
       
@@ -19,6 +10,8 @@ setup(
       version = '0.2.32' ,
       license = 'MIT',
       description = 'Functions that I recurrenlty use in other scripts.',
+      long_description=long_description,
+      long_description_content_type='text/markdown',
       author = 'Gabriele Benedetti',
       author_email = 'gabri.benedetti@gmail.com',
       url = 'https://github.com/gbene',
@@ -32,7 +25,5 @@ setup(
           'Intended Audience :: Developers',
           'License :: OSI Approved :: MIT License',
           ],
-      long_description = read_file,
-      long_description_content_type='text/markdown',
 )
    
