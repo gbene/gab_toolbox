@@ -1,6 +1,4 @@
 from distutils.core import setup
-with open('README.md') as f:
-    long_description = f.read()
 
 setup(
       
@@ -10,8 +8,6 @@ setup(
       version = '0.2.32' ,
       license = 'MIT',
       description = 'Functions that I recurrenlty use in other scripts.',
-      long_description=long_description,
-      long_description_content_type='text/markdown',
       author = 'Gabriele Benedetti',
       author_email = 'gabri.benedetti@gmail.com',
       url = 'https://github.com/gbene',
