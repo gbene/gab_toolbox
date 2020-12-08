@@ -31,7 +31,7 @@ The function checks if the string or array of strings specified in **title** is 
 Function used to import files as an array. Every new line is a new entry of the array.
 
 ```python
-importtxt(file)
+import_file(file)
 ```
 In **file** you must specify the name and extension of the file you want to import and, if the file is not located in the working directory, you must add the full file path.
 
@@ -39,7 +39,7 @@ In **file** you must specify the name and extension of the file you want to impo
 Function used to write text files from arrays. Every array entry will be written in a separeted line.
 
 ```python
-write(array,file)
+write_file(array,file)
 ```
 
 + In **array** you must write the target array that needs to be exported. 
