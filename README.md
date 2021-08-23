@@ -158,7 +158,7 @@ Functions that can be used for emailng updates on long running scripts. To impor
 To use the specific function:
  ``` python
  mail_tools.success_mail(arguments)
- 
+ ```
  
  
 ### success_mail:
