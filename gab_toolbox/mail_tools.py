@@ -18,7 +18,7 @@ def success_mail(to_mail,info,from_mail=os.environ.get('python_sender'),from_pas
 		smtp.send_message(msg)
 	print('Notification mail send')
 
-def error_mail(to_mail,info,from_mail=os.environ.get('python_sender'),from_pass=os.environ.get('python_sender_pass'))):
+def error_mail(to_mail,info,from_mail=os.environ.get('python_sender'),from_pass=os.environ.get('python_sender_pass')):
 	
 	msg = em()
 
