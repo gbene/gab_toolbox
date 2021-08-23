@@ -188,7 +188,8 @@ error_mail(to_mail,info,[from_mail],[from_pass])
  
   + Script name: [name of the script]
   + info: [info] that the user chooses to send (eg. raised exception type, error line etcetc)"  
-  
+ 
+ ### half_way:
 ```python
 half_way(to_mail,info,[from_mail],[from_pass])
 ```
