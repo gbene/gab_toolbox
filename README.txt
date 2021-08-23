@@ -31,7 +31,7 @@ The function checks if the string or array of strings specified in **title** is 
 Function used to import files as an array. Every new line is a new entry of the array.
 
 ```python
-importtxt(file)
+import_file(file)
 ```
 In **file** you must specify the name and extension of the file you want to import and, if the file is not located in the working directory, you must add the full file path.
 
@@ -39,7 +39,7 @@ In **file** you must specify the name and extension of the file you want to impo
 Function used to write text files from arrays. Every array entry will be written in a separeted line.
 
 ```python
-write(array,file)
+write_file(array,file)
 ```
 
 + In **array** you must write the target array that needs to be exported. 
@@ -91,6 +91,7 @@ To use the specific function:
  ``` python
  tex_tools.bib_entries(arguments)
 ```
+
 ### bib_entries:
 This function is used to separate and classify bib files, imported as list.
 ```python
@@ -147,3 +148,52 @@ This function converts any imported csv files as list to a list ready to be save
 + The first argument accepts the original csv file (imported as list) to be converted.
 + The **[sep]** argument defines the column separator. By default is set to \t (tab).
 
+
+## mail_tools
+
+Functions that can be used for emailng updates on long running scripts. To import use:  
+ ``` python
+ from gab_toolbox import mail_tools
+ ```
+To use the specific function:
+ ``` python
+ mail_tools.success_mail(arguments)
+ 
+ 
+ 
+### success_mail:
+
+```python
+success_mail(to_mail,info,[from_mail],[from_pass])
+```
+ 
+ This functions sends to a receciving address (**to_mail**) a success mail stating:
+ 
+ "The script finished succesfully, here are some informations:
+ 
+  + Script name: [name of the script]
+  + info: [info] that the user chooses to send (eg. file processesd, processing time etcetc)"
+ 
+ The arguments **[from_mail]** and **[from_pass]** are correspondigly the sender mail and sender mail password (needed to login). The arguments have standard given by enviromental variables registered as 'python_sender' (for [from_mail]) and 'python_sender_pass' (for [from_pass]).   
+  
+ ### error_mail:
+
+```python
+error_mail(to_mail,info,[from_mail],[from_pass])
+```
+ 
+ This functions sends to a receciving address (**to_mail**) a error mail stating:
+ 
+ "An error occured, here are some informations:
+ 
+  + Script name: [name of the script]
+  + info: [info] that the user chooses to send (eg. raised exception type, error line etcetc)"  
+  
+```python
+half_way(to_mail,info,[from_mail],[from_pass])
+```
+  This functions sends to a receciving address (**to_mail**) an update mail stating:
+  
+  "The script [name of the script] is still running!"
+  
+ 
